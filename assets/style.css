@@ -1,0 +1,479 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #1c1f1b;
+    background: #ffffff;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+header {
+    border-bottom: 1px solid #e5e5e5;
+    background: #ffffff;
+}
+
+nav {
+    max-width: 1150px;
+    margin: auto;
+    padding: 22px 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+nav ul {
+    list-style: none;
+
+    display: flex;
+    gap: 30px;
+}
+
+nav ul a {
+    font-size: 15px;
+    color: #555;
+}
+
+nav ul a:hover {
+    color: #1c1f1b;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 650px;
+
+    display: flex;
+    align-items: center;
+
+    background: #f0f6f7;
+}
+
+.hero-content {
+    max-width: 1150px;
+    width: 100%;
+    margin: auto;
+    padding: 80px 30px;
+}
+
+.eyebrow {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #2f6844;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    max-width: 750px;
+
+    font-size: 64px;
+    line-height: 1.05;
+    letter-spacing: -2px;
+
+    margin-bottom: 25px;
+}
+
+.hero-content > p:not(.eyebrow) {
+    max-width: 650px;
+
+    font-size: 18px;
+    color: #666b62;
+
+    margin-bottom: 35px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.hero-buttons a {
+    display: inline-block;
+
+    padding: 14px 24px;
+
+    background: #1c1f1b;
+    color: white;
+
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.hero-buttons a:last-child {
+    background: transparent;
+    color: #1c1f1b;
+    border: 1px solid #1c1f1b;
+}
+
+.hero-buttons a:hover {
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   SERVICES
+========================= */
+
+.services {
+    max-width: 1150px;
+    margin: auto;
+    padding: 110px 30px;
+}
+
+.section-heading {
+    max-width: 700px;
+    margin-bottom: 60px;
+}
+
+.section-heading h2 {
+    font-size: 44px;
+    line-height: 1.15;
+    margin-bottom: 20px;
+}
+
+.section-heading > p:last-child {
+    color: #666b62;
+    font-size: 17px;
+}
+
+
+/* =========================
+   SERVICE GRID
+========================= */
+
+.service-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+.service-card {
+    padding: 40px;
+
+    border: 1px solid #e1e0d6;
+    border-radius: 8px;
+
+    transition: 0.25s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    border-color: #2f6844;
+}
+
+.service-number {
+    display: block;
+
+    color: #2f6844;
+    font-size: 14px;
+    font-weight: 700;
+
+    margin-bottom: 25px;
+}
+
+.service-card h3 {
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.service-card p {
+    color: #666b62;
+    margin-bottom: 25px;
+}
+
+.service-card a {
+    font-weight: 600;
+    color: #2f6844;
+}
+
+
+/* =========================
+   CTA
+========================= */
+
+.cta {
+    background: #1c1f1b;
+    color: white;
+
+    padding: 100px 30px;
+    text-align: center;
+}
+
+.cta > div {
+    max-width: 700px;
+    margin: auto;
+}
+
+.cta .eyebrow {
+    color: #a9c7b3;
+}
+
+.cta h2 {
+    font-size: 48px;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.cta p:last-child {
+    color: #c5c8c3;
+    font-size: 17px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    padding: 25px 30px;
+
+    text-align: center;
+
+    background: #1c1f1b;
+    border-top: 1px solid #333;
+
+    color: #999;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+    nav {
+        padding: 18px 20px;
+    }
+
+    nav ul {
+        gap: 15px;
+    }
+
+    .hero {
+        min-height: 550px;
+    }
+
+    .hero-content {
+        padding: 60px 20px;
+    }
+
+    .hero h1 {
+        font-size: 45px;
+    }
+
+    .hero-content > p:not(.eyebrow) {
+        font-size: 16px;
+    }
+
+    .services {
+        padding: 80px 20px;
+    }
+
+    .section-heading h2 {
+        font-size: 36px;
+    }
+
+    .service-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-card {
+        padding: 30px;
+    }
+
+    .cta {
+        padding: 80px 20px;
+    }
+
+    .cta h2 {
+        font-size: 38px;
+    }
+}
+/* ==============================
+   MODERN PREMIUM QUOTE FORM
+================================= */
+
+.quote-form {
+    width: min(100% - 32px, 680px);
+    margin: 70px auto;
+    padding: 42px;
+    box-sizing: border-box;
+
+    background: #ffffff;
+    border: 1px solid #e8ebe8;
+    border-radius: 24px;
+
+    box-shadow:
+        0 24px 60px rgba(28, 31, 27, 0.08),
+        0 4px 14px rgba(28, 31, 27, 0.04);
+
+    font-family: Arial, sans-serif;
+}
+
+/* Labels */
+
+.quote-form label {
+    display: block;
+    margin: 0 0 8px;
+
+    color: #1c1f1b;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+}
+
+/* Inputs */
+
+.quote-form input,
+.quote-form select,
+.quote-form textarea {
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 15px 17px;
+    margin-bottom: 22px;
+
+    background: #f8faf8;
+    border: 1px solid #dfe4df;
+    border-radius: 12px;
+
+    color: #1c1f1b;
+    font-size: 15px;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
+}
+
+/* Placeholder */
+
+.quote-form input::placeholder,
+.quote-form textarea::placeholder {
+    color: #9aa09a;
+}
+
+/* Focus */
+
+.quote-form input:focus,
+.quote-form select:focus,
+.quote-form textarea:focus {
+    background: #ffffff;
+    border-color: #2f6844;
+
+    box-shadow: 0 0 0 4px rgba(47, 104, 68, 0.09);
+}
+
+/* Textarea */
+
+.quote-form textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+/* Submit button */
+
+.quote-form input[type="submit"] {
+    width: 100%;
+    margin: 4px 0 0;
+
+    padding: 16px 20px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: #1c1f1b;
+    color: #ffffff;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.quote-form input[type="submit"]:hover {
+    background: #2f6844;
+    transform: translateY(-2px);
+
+    box-shadow: 0 12px 25px rgba(47, 104, 68, 0.18);
+}
+
+.quote-form input[type="submit"]:active {
+    transform: translateY(0);
+}
+
+/* Validation errors */
+
+.form-error {
+    margin: 8px 0;
+    padding: 13px 16px;
+
+    background: #fff7f7;
+    border: 1px solid #f2d0d0;
+    border-left: 4px solid #c93636;
+    border-radius: 10px;
+
+    color: #a52828;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .quote-form {
+        width: calc(100% - 24px);
+        margin: 35px auto;
+        padding: 26px 20px;
+        border-radius: 18px;
+    }
+
+    .quote-form input,
+    .quote-form select,
+    .quote-form textarea {
+        padding: 14px;
+    }
+}
