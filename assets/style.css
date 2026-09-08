@@ -477,3 +477,109 @@ footer {
         padding: 14px;
     }
 }
+/* =========================
+   ADMIN DASHBOARD
+========================= */
+
+.admin-header {
+    margin-bottom: 30px;
+}
+
+.admin-header h1 {
+    font-size: 36px;
+    margin-bottom: 8px;
+    color: #1f2937;
+}
+
+.admin-header p {
+    color: #6b7280;
+    font-size: 16px;
+}
+
+/* Table wrapper */
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    border-radius: 12px;
+}
+
+/* Main table */
+
+.leads-table {
+    width: 100%;
+    min-width: 1000px;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: #ffffff;
+    font-family: Arial, sans-serif;
+}
+
+/* Table header */
+
+.leads-table th {
+    background: #111827;
+    color: #ffffff;
+    padding: 16px;
+    text-align: left;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+/* Table cells */
+
+.leads-table td {
+    padding: 15px 16px;
+    border-bottom: 1px solid #e5e7eb;
+    color: #374151;
+    font-size: 14px;
+}
+
+/* Row hover */
+
+.leads-table tbody tr {
+    transition: all 0.2s ease;
+}
+
+.leads-table tr:hover td {
+    background: #f0f7ff;
+    color: #111827;
+}
+
+/* Status */
+
+.status-badge {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 20px;
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* First column */
+
+.leads-table td:first-child {
+    font-weight: 700;
+    color: #111827;
+}
+
+/* Email */
+
+.leads-table td:nth-child(3) {
+    color: #2563eb;
+}
+
+/* Budget */
+
+.leads-table td:nth-child(6) {
+    font-weight: 600;
+}
+
+/* Smooth hover */
+
+.leads-table td {
+    transition: background 0.2s ease, color 0.2s ease;
+}
