@@ -1,6 +1,7 @@
-/* =========================
+```css
+/* =========================================================
    RESET
-========================= */
+========================================================= */
 
 * {
     margin: 0;
@@ -13,7 +14,7 @@ html {
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     color: #1c1f1b;
     background: #ffffff;
     line-height: 1.6;
@@ -25,9 +26,9 @@ a {
 }
 
 
-/* =========================
+/* =========================================================
    NAVIGATION
-========================= */
+========================================================= */
 
 header {
     border-bottom: 1px solid #e5e5e5;
@@ -38,7 +39,6 @@ nav {
     max-width: 1150px;
     margin: auto;
     padding: 22px 30px;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -47,35 +47,50 @@ nav {
 .logo {
     font-size: 24px;
     font-weight: 700;
+    letter-spacing: -0.5px;
 }
 
 nav ul {
     list-style: none;
-
     display: flex;
     gap: 30px;
 }
 
 nav ul a {
+    position: relative;
     font-size: 15px;
     color: #555;
+    transition: color 0.2s ease;
+}
+
+nav ul a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -7px;
+    width: 0;
+    height: 2px;
+    background: #2f6844;
+    transition: width 0.25s ease;
 }
 
 nav ul a:hover {
     color: #1c1f1b;
 }
 
+nav ul a:hover::after {
+    width: 100%;
+}
 
-/* =========================
+
+/* =========================================================
    HERO
-========================= */
+========================================================= */
 
 .hero {
     min-height: 650px;
-
     display: flex;
     align-items: center;
-
     background: #f0f6f7;
 }
 
@@ -87,19 +102,22 @@ nav ul a:hover {
 }
 
 .eyebrow {
-    font-size: 13px;
+    display: inline-block;
+    margin-bottom: 18px;
+
+    font-size: 12px;
     font-weight: 700;
-    letter-spacing: 1.5px;
+    letter-spacing: 1.8px;
+
     color: #2f6844;
-    margin-bottom: 20px;
 }
 
 .hero h1 {
-    max-width: 750px;
+    max-width: 760px;
 
     font-size: 64px;
     line-height: 1.05;
-    letter-spacing: -2px;
+    letter-spacing: -2.5px;
 
     margin-bottom: 25px;
 }
@@ -108,6 +126,8 @@ nav ul a:hover {
     max-width: 650px;
 
     font-size: 18px;
+    line-height: 1.7;
+
     color: #666b62;
 
     margin-bottom: 35px;
@@ -124,26 +144,46 @@ nav ul a:hover {
     padding: 14px 24px;
 
     background: #1c1f1b;
-    color: white;
+    color: #ffffff;
 
-    border-radius: 4px;
+    border: 1px solid #1c1f1b;
+    border-radius: 6px;
+
     font-weight: 600;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.hero-buttons a:first-child:hover {
+    background: #2f6844;
+    border-color: #2f6844;
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 10px 24px rgba(47, 104, 68, 0.16);
 }
 
 .hero-buttons a:last-child {
     background: transparent;
     color: #1c1f1b;
-    border: 1px solid #1c1f1b;
 }
 
-.hero-buttons a:hover {
+.hero-buttons a:last-child:hover {
+    background: #ffffff;
+
     transform: translateY(-2px);
+
+    box-shadow: 0 8px 20px rgba(28, 31, 27, 0.06);
 }
 
 
-/* =========================
+/* =========================================================
    SERVICES
-========================= */
+========================================================= */
 
 .services {
     max-width: 1150px;
@@ -156,27 +196,32 @@ nav ul a:hover {
     margin-bottom: 60px;
 }
 
+.section-heading .eyebrow {
+    margin-bottom: 15px;
+}
+
 .section-heading h2 {
     font-size: 44px;
     line-height: 1.15;
+    letter-spacing: -1.3px;
+
     margin-bottom: 20px;
 }
 
 .section-heading > p:last-child {
     color: #666b62;
     font-size: 17px;
+    line-height: 1.7;
 }
 
 
-/* =========================
+/* =========================================================
    SERVICE GRID
-========================= */
+========================================================= */
 
 .service-grid {
     display: grid;
-
     grid-template-columns: repeat(2, 1fr);
-
     gap: 20px;
 }
 
@@ -184,96 +229,657 @@ nav ul a:hover {
     padding: 40px;
 
     border: 1px solid #e1e0d6;
-    border-radius: 8px;
+    border-radius: 10px;
 
-    transition: 0.25s ease;
+    background: #ffffff;
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
 }
 
 .service-card:hover {
     transform: translateY(-5px);
+
     border-color: #2f6844;
+
+    box-shadow:
+        0 18px 40px rgba(28, 31, 27, 0.08);
 }
 
 .service-number {
     display: block;
 
     color: #2f6844;
-    font-size: 14px;
+
+    font-size: 13px;
     font-weight: 700;
+    letter-spacing: 1px;
 
     margin-bottom: 25px;
 }
 
 .service-card h3 {
     font-size: 25px;
+    line-height: 1.25;
+
     margin-bottom: 15px;
 }
 
 .service-card p {
     color: #666b62;
+
     margin-bottom: 25px;
 }
 
 .service-card a {
     font-weight: 600;
     color: #2f6844;
+
+    transition: color 0.2s ease;
+}
+
+.service-card a:hover {
+    color: #1c1f1b;
 }
 
 
-/* =========================
-   CTA
-========================= */
+/* =========================================================
+   CONTACT SECTION
+========================================================= */
 
-.cta {
-    background: #1c1f1b;
-    color: white;
+.contact-section {
+    padding: 110px 20px 120px;
 
-    padding: 100px 30px;
+    background: #f7f9f7;
+}
+
+.contact-heading {
+    width: min(100% - 32px, 700px);
+    margin: 0 auto;
+
     text-align: center;
 }
 
-.cta > div {
-    max-width: 700px;
-    margin: auto;
+.contact-heading .eyebrow {
+    margin-bottom: 14px;
 }
 
-.cta .eyebrow {
-    color: #a9c7b3;
-}
-
-.cta h2 {
+.contact-heading h2 {
     font-size: 48px;
     line-height: 1.1;
-    margin-bottom: 20px;
+    letter-spacing: -1.5px;
+
+    margin-bottom: 18px;
 }
 
-.cta p:last-child {
-    color: #c5c8c3;
+.contact-heading > p:last-child {
+    max-width: 580px;
+    margin: 0 auto;
+
+    color: #666b62;
     font-size: 17px;
+    line-height: 1.7;
 }
 
 
-/* =========================
-   FOOTER
-========================= */
+/* =========================================================
+   PREMIUM QUOTE FORM
+========================================================= */
 
-footer {
-    padding: 25px 30px;
+.quote-form {
+    width: min(100% - 32px, 680px);
 
-    text-align: center;
+    margin: 50px auto 0;
+    padding: 42px;
+
+    background: #ffffff;
+
+    border: 1px solid #e8ebe8;
+    border-radius: 24px;
+
+    box-shadow:
+        0 24px 60px rgba(28, 31, 27, 0.08),
+        0 4px 14px rgba(28, 31, 27, 0.04);
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* =========================================================
+   FORM HEADING
+========================================================= */
+
+.quote-form h3 {
+    font-size: 26px;
+    line-height: 1.25;
+    letter-spacing: -0.5px;
+
+    margin-bottom: 8px;
+
+    color: #1c1f1b;
+}
+
+.form-intro {
+    color: #777d75;
+
+    font-size: 14px;
+    line-height: 1.6;
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================================================
+   FORM LABELS
+========================================================= */
+
+.quote-form label {
+    display: block;
+
+    margin: 0 0 8px;
+
+    color: #1c1f1b;
+
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+}
+
+
+/* =========================================================
+   FORM INPUTS
+========================================================= */
+
+.quote-form input,
+.quote-form select,
+.quote-form textarea {
+    width: 100%;
+
+    padding: 15px 17px;
+    margin-bottom: 22px;
+
+    background: #f8faf8;
+
+    border: 1px solid #dfe4df;
+    border-radius: 12px;
+
+    color: #1c1f1b;
+
+    font-family: inherit;
+    font-size: 15px;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+/* =========================================================
+   FORM PLACEHOLDER
+========================================================= */
+
+.quote-form input::placeholder,
+.quote-form textarea::placeholder {
+    color: #9aa09a;
+}
+
+
+/* =========================================================
+   FORM HOVER
+========================================================= */
+
+.quote-form input:hover,
+.quote-form select:hover,
+.quote-form textarea:hover {
+    border-color: #c5cdc5;
+}
+
+
+/* =========================================================
+   FORM FOCUS
+========================================================= */
+
+.quote-form input:focus,
+.quote-form select:focus,
+.quote-form textarea:focus {
+    background: #ffffff;
+
+    border-color: #2f6844;
+
+    box-shadow:
+        0 0 0 4px rgba(47, 104, 68, 0.09);
+}
+
+
+/* =========================================================
+   TEXTAREA
+========================================================= */
+
+.quote-form textarea {
+    min-height: 150px;
+
+    resize: vertical;
+}
+
+
+/* =========================================================
+   FORM SELECT
+========================================================= */
+
+.quote-form select {
+    appearance: none;
+    -webkit-appearance: none;
+
+    background-image:
+        linear-gradient(45deg, transparent 50%, #667085 50%),
+        linear-gradient(135deg, #667085 50%, transparent 50%);
+
+    background-position:
+        calc(100% - 19px) 52%,
+        calc(100% - 14px) 52%;
+
+    background-size:
+        5px 5px,
+        5px 5px;
+
+    background-repeat: no-repeat;
+
+    padding-right: 45px;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   FORM BUTTON
+========================================================= */
+
+.quote-form button,
+.quote-form input[type="submit"] {
+    width: 100%;
+
+    margin: 4px 0 0;
+    padding: 16px 20px;
+
+    border: none;
+    border-radius: 12px;
 
     background: #1c1f1b;
-    border-top: 1px solid #333;
+    color: #ffffff;
 
-    color: #999;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.quote-form button:hover,
+.quote-form input[type="submit"]:hover {
+    background: #2f6844;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 25px rgba(47, 104, 68, 0.18);
+}
+
+.quote-form button:active,
+.quote-form input[type="submit"]:active {
+    transform: translateY(0);
+    box-shadow: none;
 }
 
 
-/* =========================
+/* =========================================================
+   FORM VALIDATION ERRORS
+========================================================= */
+
+.form-error {
+    margin: 8px 0;
+    padding: 13px 16px;
+
+    background: #fff7f7;
+
+    border: 1px solid #f2d0d0;
+    border-left: 4px solid #c93636;
+
+    border-radius: 10px;
+
+    color: #a52828;
+
+    font-size: 14px;
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   ADMIN DASHBOARD
+========================================================= */
+
+body:has(.leads-table) {
+    background: #f5f7fb;
+
+    min-height: 100vh;
+
+    padding: 50px 25px;
+}
+
+
+/* =========================================================
+   ADMIN HEADING
+========================================================= */
+
+body:has(.leads-table) > h1 {
+    max-width: 1320px;
+
+    margin: 0 auto 8px;
+
+    color: #111827;
+
+    font-size: 38px;
+    line-height: 1.15;
+    letter-spacing: -1px;
+}
+
+body:has(.leads-table) > p {
+    max-width: 1320px;
+
+    margin: 0 auto 30px;
+
+    color: #667085;
+
+    font-size: 16px;
+}
+
+
+/* =========================================================
+   ADMIN TABLE WRAPPER
+========================================================= */
+
+.table-wrapper {
+    width: 100%;
+    max-width: 1320px;
+
+    margin: 0 auto;
+
+    overflow-x: auto;
+
+    border: 1px solid #e4e7ec;
+    border-radius: 18px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 20px 50px rgba(16, 24, 40, 0.07),
+        0 3px 10px rgba(16, 24, 40, 0.03);
+}
+
+
+/* =========================================================
+   LEADS TABLE
+========================================================= */
+
+.leads-table {
+    width: 100%;
+    min-width: 1100px;
+
+    border-collapse: separate;
+    border-spacing: 0;
+
+    background: #ffffff;
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* =========================================================
+   TABLE HEADER
+========================================================= */
+
+.leads-table thead th {
+    background: #111827;
+    color: #ffffff;
+
+    padding: 17px 18px;
+
+    text-align: left;
+
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+
+    white-space: nowrap;
+}
+
+
+/* Rounded corners */
+
+.leads-table thead th:first-child {
+    border-top-left-radius: 17px;
+}
+
+.leads-table thead th:last-child {
+    border-top-right-radius: 17px;
+}
+
+
+/* =========================================================
+   TABLE BODY
+========================================================= */
+
+.leads-table tbody td {
+    padding: 18px;
+
+    border-bottom: 1px solid #eaecf0;
+
+    color: #344054;
+
+    font-size: 14px;
+    line-height: 1.45;
+
+    vertical-align: middle;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+
+/* Remove final border */
+
+.leads-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* =========================================================
+   TABLE ROW HOVER
+========================================================= */
+
+.leads-table tbody tr {
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.leads-table tbody tr:hover td {
+    background: #f4f9f5;
+}
+
+.leads-table tbody tr:hover td:first-child {
+    color: #2f6844;
+}
+
+
+/* =========================================================
+   ID
+========================================================= */
+
+.leads-table td:first-child {
+    font-weight: 700;
+    color: #111827;
+}
+
+
+/* =========================================================
+   EMAIL
+========================================================= */
+
+.leads-table td:nth-child(3) {
+    color: #2563eb;
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   BUDGET
+========================================================= */
+
+.leads-table td:nth-child(6) {
+    color: #111827;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   MESSAGE
+========================================================= */
+
+.leads-table td:nth-child(7) {
+    max-width: 280px;
+    color: #475467;
+}
+
+
+/* =========================================================
+   STATUS BADGE
+========================================================= */
+
+.status-badge {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 65px;
+
+    padding: 6px 12px;
+
+    border-radius: 999px;
+
+    background: #eaf7ed;
+    color: #16803c;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.status-badge:hover {
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 4px 10px rgba(22, 128, 60, 0.12);
+}
+
+
+/* =========================================================
+   EDIT BUTTON
+========================================================= */
+
+.leads-table td:last-child a {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 9px 15px;
+
+    background: #111827;
+    color: #ffffff;
+
+    border-radius: 8px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.leads-table td:last-child a:hover {
+    background: #2f6844;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 7px 16px rgba(47, 104, 68, 0.18);
+}
+
+
+/* =========================================================
+   EDIT PAGE
+========================================================= */
+
+body:has(.quote-form) {
+    background: #f5f7fb;
+
+    min-height: 100vh;
+
+    padding: 50px 20px;
+}
+
+
+/* Edit heading */
+
+body:has(.quote-form) > h1 {
+    width: min(100% - 32px, 680px);
+
+    margin: 0 auto -45px;
+
+    position: relative;
+    z-index: 2;
+
+    padding: 0 42px;
+
+    color: #111827;
+
+    font-size: 32px;
+    line-height: 1.2;
+    letter-spacing: -0.7px;
+}
+
+
+/* Edit form */
+
+body:has(.quote-form) .quote-form {
+    margin-top: 65px;
+}
+
+
+/* =========================================================
    RESPONSIVE
-========================= */
+========================================================= */
 
 @media (max-width: 768px) {
+
+    /* Navigation */
 
     nav {
         padding: 18px 20px;
@@ -282,6 +888,9 @@ footer {
     nav ul {
         gap: 15px;
     }
+
+
+    /* Hero */
 
     .hero {
         min-height: 550px;
@@ -293,11 +902,15 @@ footer {
 
     .hero h1 {
         font-size: 45px;
+        letter-spacing: -1.8px;
     }
 
     .hero-content > p:not(.eyebrow) {
         font-size: 16px;
     }
+
+
+    /* Services */
 
     .services {
         padding: 80px 20px;
@@ -315,160 +928,69 @@ footer {
         padding: 30px;
     }
 
-    .cta {
-        padding: 80px 20px;
+
+    /* Contact */
+
+    .contact-section {
+        padding: 80px 20px 90px;
     }
 
-    .cta h2 {
+    .contact-heading h2 {
         font-size: 38px;
     }
-}
-/* ==============================
-   MODERN PREMIUM QUOTE FORM
-================================= */
 
-.quote-form {
-    width: min(100% - 32px, 680px);
-    margin: 70px auto;
-    padding: 42px;
-    box-sizing: border-box;
 
-    background: #ffffff;
-    border: 1px solid #e8ebe8;
-    border-radius: 24px;
+    /* Form */
 
-    box-shadow:
-        0 24px 60px rgba(28, 31, 27, 0.08),
-        0 4px 14px rgba(28, 31, 27, 0.04);
+    .quote-form {
+        padding: 32px 26px;
+    }
 
-    font-family: Arial, sans-serif;
-}
 
-/* Labels */
+    /* Admin */
 
-.quote-form label {
-    display: block;
-    margin: 0 0 8px;
+    body:has(.leads-table) {
+        padding: 30px 16px;
+    }
 
-    color: #1c1f1b;
-    font-size: 14px;
-    font-weight: 600;
-    letter-spacing: 0.2px;
-}
+    body:has(.leads-table) > h1 {
+        font-size: 32px;
+    }
 
-/* Inputs */
+    body:has(.leads-table) > p {
+        font-size: 15px;
+        margin-bottom: 25px;
+    }
 
-.quote-form input,
-.quote-form select,
-.quote-form textarea {
-    width: 100%;
-    box-sizing: border-box;
+    .table-wrapper {
+        border-radius: 14px;
+    }
 
-    padding: 15px 17px;
-    margin-bottom: 22px;
-
-    background: #f8faf8;
-    border: 1px solid #dfe4df;
-    border-radius: 12px;
-
-    color: #1c1f1b;
-    font-size: 15px;
-
-    outline: none;
-
-    transition:
-        border-color 0.2s ease,
-        background 0.2s ease,
-        box-shadow 0.2s ease,
-        transform 0.2s ease;
+    .leads-table th,
+    .leads-table td {
+        padding: 15px;
+    }
 }
 
-/* Placeholder */
 
-.quote-form input::placeholder,
-.quote-form textarea::placeholder {
-    color: #9aa09a;
-}
-
-/* Focus */
-
-.quote-form input:focus,
-.quote-form select:focus,
-.quote-form textarea:focus {
-    background: #ffffff;
-    border-color: #2f6844;
-
-    box-shadow: 0 0 0 4px rgba(47, 104, 68, 0.09);
-}
-
-/* Textarea */
-
-.quote-form textarea {
-    min-height: 150px;
-    resize: vertical;
-}
-
-/* Submit button */
-
-.quote-form input[type="submit"] {
-    width: 100%;
-    margin: 4px 0 0;
-
-    padding: 16px 20px;
-
-    border: none;
-    border-radius: 12px;
-
-    background: #1c1f1b;
-    color: #ffffff;
-
-    font-size: 15px;
-    font-weight: 600;
-
-    cursor: pointer;
-
-    transition:
-        background 0.25s ease,
-        transform 0.25s ease,
-        box-shadow 0.25s ease;
-}
-
-.quote-form input[type="submit"]:hover {
-    background: #2f6844;
-    transform: translateY(-2px);
-
-    box-shadow: 0 12px 25px rgba(47, 104, 68, 0.18);
-}
-
-.quote-form input[type="submit"]:active {
-    transform: translateY(0);
-}
-
-/* Validation errors */
-
-.form-error {
-    margin: 8px 0;
-    padding: 13px 16px;
-
-    background: #fff7f7;
-    border: 1px solid #f2d0d0;
-    border-left: 4px solid #c93636;
-    border-radius: 10px;
-
-    color: #a52828;
-    font-size: 14px;
-    font-weight: 500;
-}
-
-/* Mobile */
+/* =========================================================
+   FORM MOBILE
+========================================================= */
 
 @media (max-width: 600px) {
 
     .quote-form {
         width: calc(100% - 24px);
-        margin: 35px auto;
-        padding: 26px 20px;
+
+        margin: 40px auto 0;
+
+        padding: 28px 20px;
+
         border-radius: 18px;
+    }
+
+    .quote-form h3 {
+        font-size: 23px;
     }
 
     .quote-form input,
@@ -476,110 +998,58 @@ footer {
     .quote-form textarea {
         padding: 14px;
     }
-}
-/* =========================
-   ADMIN DASHBOARD
-========================= */
 
-.admin-header {
-    margin-bottom: 30px;
-}
+    body:has(.quote-form) {
+        padding: 35px 0;
+    }
 
-.admin-header h1 {
-    font-size: 36px;
-    margin-bottom: 8px;
-    color: #1f2937;
-}
+    body:has(.quote-form) > h1 {
+        width: calc(100% - 24px);
 
-.admin-header p {
-    color: #6b7280;
-    font-size: 16px;
+        padding: 0 20px;
+
+        font-size: 28px;
+
+        margin-bottom: -40px;
+    }
 }
 
-/* Table wrapper */
 
-.table-wrapper {
-    width: 100%;
-    overflow-x: auto;
-    border-radius: 12px;
-}
+/* =========================================================
+   EXTRA SMALL DEVICES
+========================================================= */
 
-/* Main table */
+@media (max-width: 400px) {
 
-.leads-table {
-    width: 100%;
-    min-width: 1000px;
-    border-collapse: separate;
-    border-spacing: 0;
-    background: #ffffff;
-    font-family: Arial, sans-serif;
-}
+    nav ul {
+        gap: 10px;
+    }
 
-/* Table header */
+    nav ul a {
+        font-size: 13px;
+    }
 
-.leads-table th {
-    background: #111827;
-    color: #ffffff;
-    padding: 16px;
-    text-align: left;
-    font-size: 14px;
-    font-weight: 600;
-    letter-spacing: 0.3px;
-}
+    .hero h1 {
+        font-size: 38px;
+    }
 
-/* Table cells */
+    .hero-buttons {
+        flex-direction: column;
+    }
 
-.leads-table td {
-    padding: 15px 16px;
-    border-bottom: 1px solid #e5e7eb;
-    color: #374151;
-    font-size: 14px;
-}
+    .hero-buttons a {
+        text-align: center;
+    }
 
-/* Row hover */
+    .contact-heading h2 {
+        font-size: 32px;
+    }
 
-.leads-table tbody tr {
-    transition: all 0.2s ease;
-}
+    .quote-form {
+        padding: 24px 17px;
+    }
 
-.leads-table tr:hover td {
-    background: #f0f7ff;
-    color: #111827;
-}
-
-/* Status */
-
-.status-badge {
-    display: inline-block;
-    padding: 5px 10px;
-    border-radius: 20px;
-    background: #e8f5e9;
-    color: #2e7d32;
-    font-size: 12px;
-    font-weight: 600;
-}
-
-/* First column */
-
-.leads-table td:first-child {
-    font-weight: 700;
-    color: #111827;
-}
-
-/* Email */
-
-.leads-table td:nth-child(3) {
-    color: #2563eb;
-}
-
-/* Budget */
-
-.leads-table td:nth-child(6) {
-    font-weight: 600;
-}
-
-/* Smooth hover */
-
-.leads-table td {
-    transition: background 0.2s ease, color 0.2s ease;
+    body:has(.quote-form) > h1 {
+        padding: 0 17px;
+    }
 }
